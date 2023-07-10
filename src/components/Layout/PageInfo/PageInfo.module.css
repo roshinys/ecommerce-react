@@ -1,0 +1,16 @@
+.column {
+  height: 290px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lightBlueColor {
+  background-color: #e8f9fd;
+}
+.lightPurpleColor {
+  background-color: #c1a1d3;
+}
+.lightPinkColor {
+  background-color: #ffbbcc;
+}

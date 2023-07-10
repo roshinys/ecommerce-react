@@ -1,0 +1,24 @@
+.slideItem {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 25%;
+  margin-left: 5%;
+  padding: 10px;
+}
+
+.image {
+  margin-right: 20%;
+  width: 60%;
+  height: 200px;
+}
+.button {
+  background-color: #f2d8d8;
+  color: #2d2727;
+  border: none;
+  font-weight: 600;
+}
+.button:hover {
+  background-color: #ffeaea;
+  color: #2d2727;
+}
