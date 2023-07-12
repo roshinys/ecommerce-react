@@ -1,0 +1,43 @@
+.cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+
+.cartRow {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-bottom: 1px solid black;
+}
+
+.cartRow h5,
+.cartRow span,
+.cartRow button {
+  font-size: 20px;
+  width: 100px;
+  height: 70px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.cartRow button {
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #35a29f;
+  color: white;
+}
+
+.cartRow button:hover {
+  background-color: #116360;
+}
