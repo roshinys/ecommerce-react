@@ -2,6 +2,7 @@ import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import styles from "./NavBar.module.css";
 import Modal from "../../UI/Modal/Modal";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
@@ -9,9 +10,36 @@ function NavBar() {
       <Navbar.Toggle aria-controls="navbar-nav" />
       <Navbar.Collapse id="navbar-nav">
         <Nav className="mx-auto">
-          <Nav.Link className={styles.link}>Home</Nav.Link>
-          <Nav.Link className={styles.link}>Shop</Nav.Link>
-          <Nav.Link className={styles.link}>About</Nav.Link>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive
+                ? `${styles.link} ${styles.active}`
+                : `${styles.link}`;
+            }}
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive
+                ? `${styles.link} ${styles.active}`
+                : `${styles.link}`;
+            }}
+            to="/store"
+          >
+            Store
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive
+                ? `${styles.link} ${styles.active}`
+                : `${styles.link}`;
+            }}
+            to="/about"
+          >
+            About
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
       <Modal />

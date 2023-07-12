@@ -1,16 +1,27 @@
-import Header from "./components/Layout/Header/Header";
-import PageInfo from "./components/Layout/PageInfo/PageInfo";
-import Product from "./components/Product/Product/Product";
-import CartContextProvider from "./store/Cart/CartContextProvider";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./components/Home/Home";
+import About from "./components/About/About";
+import RootLayout from "./components/Root/Root";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+    ],
+  },
+]);
 
 function App() {
-  return (
-    <CartContextProvider>
-      <Header />
-      <PageInfo />
-      <Product />
-    </CartContextProvider>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

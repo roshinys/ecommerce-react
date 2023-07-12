@@ -1,0 +1,19 @@
+.about {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 10%;
+  margin-left: 15%;
+  /* background-color: red; */
+  margin-right: 15%;
+}
+
+.image {
+  border-radius: 50%;
+  padding: 15px;
+}
+
+.description {
+  width: 65%;
+  padding: 10px;
+}

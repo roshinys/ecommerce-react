@@ -1,17 +1,10 @@
 .link {
   margin-right: 6em;
-}
-.cartButton {
-  border: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 6px 15px;
-  border-radius: 5px;
-  background-color: #35a29f;
-  color: white;
+  text-decoration: none;
+  color: black;
 }
 
-.cartButton:hover {
-  background-color: #116360;
+.active {
+  color: #35a29f;
+  border-bottom: 1px solid #1d2020;
 }
