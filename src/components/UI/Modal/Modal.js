@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Modal } from "react-bootstrap";
 import styles from "./Modal.module.css";
 import Cart from "../../Cart/Cart/Cart";
+import CartContext from "../../../store/Cart/cart-context";
 
 const ModalContainer = (props) => {
   return (
@@ -25,6 +26,7 @@ const ModalContainer = (props) => {
 };
 
 const MyComponent = () => {
+  const cartCtx = useContext(CartContext);
   const [showCart, setShowCart] = useState(false);
 
   const handleShowModal = () => {
@@ -38,7 +40,7 @@ const MyComponent = () => {
   return (
     <>
       <button className={styles.button} onClick={handleShowModal}>
-        Cart
+        Cart - {cartCtx.cartItemsCount}
       </button>
       <ModalContainer showCart={showCart} onClick={handleCloseModal} />
     </>
