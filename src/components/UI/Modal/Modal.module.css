@@ -1,7 +1,4 @@
-.link {
-  margin-right: 6em;
-}
-.cartButton {
+.button {
   border: none;
   display: flex;
   justify-content: center;
@@ -12,6 +9,13 @@
   color: white;
 }
 
-.cartButton:hover {
+.button:hover {
   background-color: #116360;
+  color: white;
+}
+
+.orderButton {
+  background-color: white;
+  color: #35a29f;
+  border: 1px solid #35a29f;
 }

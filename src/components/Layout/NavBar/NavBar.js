@@ -1,6 +1,7 @@
 import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import styles from "./NavBar.module.css";
+import Modal from "../../UI/Modal/Modal";
 
 function NavBar() {
   return (
@@ -11,9 +12,9 @@ function NavBar() {
           <Nav.Link className={styles.link}>Home</Nav.Link>
           <Nav.Link className={styles.link}>Shop</Nav.Link>
           <Nav.Link className={styles.link}>About</Nav.Link>
-          <Nav.Link className={styles.link}>Cart</Nav.Link>
         </Nav>
       </Navbar.Collapse>
+      <Modal />
     </Navbar>
   );
 }
