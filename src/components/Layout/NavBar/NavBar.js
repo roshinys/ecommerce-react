@@ -26,9 +26,9 @@ function NavBar() {
                 ? `${styles.link} ${styles.active}`
                 : `${styles.link}`;
             }}
-            to="/store"
+            to="/shop"
           >
-            Store
+            Shop
           </NavLink>
           <NavLink
             className={({ isActive }) => {
