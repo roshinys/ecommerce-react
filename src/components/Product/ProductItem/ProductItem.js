@@ -14,7 +14,7 @@ function ProductItem(props) {
         <Card.Title>{props.product.title}</Card.Title>
         <Card.Text>{props.product.description}</Card.Text>
         <Card.Text>Price: ${props.product.price.toFixed(2)}</Card.Text>
-        <Button className={styles.button}>Add to Cart</Button>
+        <Button className={styles.cartButton}>Add to Cart</Button>
       </Card.Body>
     </Card>
   );

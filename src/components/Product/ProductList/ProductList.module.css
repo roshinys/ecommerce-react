@@ -1,14 +1,6 @@
 .productSlider {
   display: flex;
+  align-items: center;
   overflow-x: hidden;
   position: relative;
-}
-.button {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: max-content;
-  border: none;
-  background-color: white;
 }

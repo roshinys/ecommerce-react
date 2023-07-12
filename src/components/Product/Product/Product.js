@@ -6,7 +6,7 @@ import styles from "./Product.module.css";
 function Product() {
   return (
     <Container className={styles.productContainer}>
-      <h3>Products</h3>
+      <h3 className={styles.title}>Products</h3>
       <ProductList />
     </Container>
   );

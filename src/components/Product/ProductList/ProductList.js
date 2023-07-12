@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import Styles from "./ProductList.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { faArrowRight, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
+import Button from "../../UI/Button/Button";
 
 const products = [
   {
@@ -56,16 +57,28 @@ function ProductList() {
     setStartIndex(nextIndex >= products.length ? 0 : nextIndex);
   };
 
+  const handleSlidePrev = () => {
+    const prevIndex = startIndex - 3;
+    setStartIndex(prevIndex <= 0 ? 0 : prevIndex);
+  };
+
   const visibleProducts = products.slice(startIndex, startIndex + 3);
 
   return (
     <div className={Styles.productSlider}>
+      {startIndex !== 0 && (
+        <Button className={Styles.button} onClick={handleSlidePrev}>
+          <FontAwesomeIcon icon={faArrowLeft} />
+        </Button>
+      )}
       {visibleProducts.map((product) => {
         return <ProductItem key={product.id} product={product} />;
       })}
-      <button className={Styles.button} onClick={handleSlideNext}>
-        <FontAwesomeIcon icon={faArrowRight} />
-      </button>
+      {startIndex + 3 <= products.length && (
+        <Button className={Styles.button} onClick={handleSlideNext}>
+          <FontAwesomeIcon icon={faArrowRight} />
+        </Button>
+      )}
     </div>
   );
 }
