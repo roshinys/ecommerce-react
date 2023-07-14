@@ -1,0 +1,9 @@
+.cartButton {
+  background-color: #c1a1d3 !important;
+  color: black !important;
+  border: none;
+  font-weight: 600;
+}
+.cartButton:hover {
+  background-color: #9d6eb8 !important;
+}

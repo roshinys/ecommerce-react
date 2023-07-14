@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import CartContextProvider from "./store/Cart/CartContextProvider";
+import ProductContextProvider from "./store/Product/ProductContextProvider";
 
 // Importing the Bootstrap CSS
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -10,9 +11,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <CartContextProvider>
-      <App />
-    </CartContextProvider>
+    <ProductContextProvider>
+      <CartContextProvider>
+        <App />
+      </CartContextProvider>
+    </ProductContextProvider>
   </React.StrictMode>
 );
 

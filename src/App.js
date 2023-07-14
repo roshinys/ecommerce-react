@@ -4,6 +4,7 @@ import About from "./components/About/About";
 import RootLayout from "./components/Root/Root";
 import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contact";
+import ProductDetail from "./components/Product/ProductDetail/ProductDetail";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/shop/:productId",
+        element: <ProductDetail />,
       },
     ],
   },

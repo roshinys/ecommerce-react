@@ -1,38 +1,24 @@
 import React, { useReducer } from "react";
 import cartContext from "./cart-context";
 
-const DUMMY_CART = [
-  {
-    id: 1,
-    title: "T-Shirt",
-    price: 9.99,
-    quantity: 3,
-  },
-  {
-    id: 2,
-    title: "Bag",
-    price: 10.99,
-    quantity: 2,
-  },
-];
-
 const cartReducer = (state, action) => {
   switch (action.type) {
     case "ADD_ITEM":
       const existingCart = state.cartList.find(
-        (cart) => cart.id === action.payload.product.id
+        (cart) => cart.id === parseInt(action.payload.product.id)
       );
       if (existingCart) {
         const updatedCartList = state.cartList.map((cart) => {
-          if (cart.id === action.payload.product.id) {
-            cart.quantity += 1;
+          if (cart.id === parseInt(action.payload.product.id)) {
+            const quantity = parseInt(cart.quantity) + 1;
+            return { ...cart, quantity };
           }
           return cart;
         });
         return {
           ...state,
           cartList: updatedCartList,
-          cartItemsCount: state.cartItemsCount + 1,
+          cartItemsCount: updatedCartList.length,
         };
       } else {
         return {
@@ -64,8 +50,8 @@ const cartReducer = (state, action) => {
 
 function CartContextProvider(props) {
   const initialState = {
-    cartList: DUMMY_CART,
-    cartItemsCount: DUMMY_CART.length,
+    cartList: [],
+    cartItemsCount: 0,
   };
 
   const [state, dispatch] = useReducer(cartReducer, initialState);
@@ -75,7 +61,7 @@ function CartContextProvider(props) {
   };
 
   const removeCartItemHandler = (id) => {
-    dispatch({ type: "REMOVE_ITEM", payload: { id: id } });
+    dispatch({ type: "REMOVE_ITEM", payload: { id: parseInt(id) } });
   };
 
   return (

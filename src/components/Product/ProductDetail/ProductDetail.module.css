@@ -1,0 +1,5 @@
+.productContainer {
+  display: flex;
+  margin: 20px;
+  padding: 50px;
+}
