@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useCallback } from "react";
 import { useParams } from "react-router-dom";
 import ProductContext from "../../../store/Product/product-context";
 import styles from "./ProductDetail.module.css";
@@ -16,12 +16,27 @@ function ProductDetail() {
   });
   const product = filteredProducts[0];
 
+  const getStarRating = useCallback((rating) => {
+    const maxRating = 5;
+    const filledStar = "★";
+    const halfFilledStar = "½";
+    const emptyStar = "☆";
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 === 0.5;
+    const filledStars = filledStar.repeat(fullStars);
+    const halfFilledStars = hasHalfStar ? halfFilledStar : "";
+    const emptyStars = emptyStar.repeat(
+      maxRating - fullStars - (hasHalfStar ? 1 : 0)
+    );
+    return filledStars + halfFilledStars + emptyStars;
+  }, []);
+
   return (
     <div className={styles.productContainer}>
       <ProductImage product={product} />
       <div>
-        <ProductPricing product={product} />
-        <ProductReview />
+        <ProductPricing product={product} onGetRating={getStarRating} />
+        <ProductReview onGetRating={getStarRating} />
       </div>
     </div>
   );

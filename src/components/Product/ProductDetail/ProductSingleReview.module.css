@@ -1,0 +1,7 @@
+.userDetail {
+  display: flex;
+  align-items: center;
+}
+.userDetail span {
+  padding: 0 5px;
+}

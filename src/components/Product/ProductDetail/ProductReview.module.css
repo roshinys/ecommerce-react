@@ -1,0 +1,22 @@
+.scrollableContainer {
+  margin-top: 15px;
+  height: 40%;
+  overflow-y: scroll;
+  border: 1px solid #35a29f;
+}
+.scrollableContainer::-webkit-scrollbar {
+  width: 6px;
+}
+
+.scrollableContainer::-webkit-scrollbar-thumb {
+  background-color: #35a29f;
+  border-radius: 4px;
+}
+
+.scrollableContainer::-webkit-scrollbar-thumb:hover {
+  background-color: #555;
+}
+
+.scrollableContainer::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}

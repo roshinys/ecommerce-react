@@ -1,4 +1,16 @@
 .productDetails {
-  flex: 1;
-  margin-left: 20px;
+  padding: 20px;
+  padding-left: 0;
+  border-bottom: 1px solid black;
+}
+
+.boldText {
+  font-weight: 600;
+  padding: 3px 0;
+}
+.productDetails h2 {
+  font-size: 18px;
+  text-align: left;
+  border-bottom: 1px solid black;
+  width: max-content;
 }
