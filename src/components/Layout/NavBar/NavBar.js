@@ -40,6 +40,16 @@ function NavBar() {
           >
             About
           </NavLink>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive
+                ? `${styles.link} ${styles.active}`
+                : `${styles.link}`;
+            }}
+            to="/contact"
+          >
+            Contact-Us
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
       <Modal />

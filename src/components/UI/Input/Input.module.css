@@ -1,0 +1,14 @@
+.inputDiv {
+  /* background-color: yellow; */
+  display: flex;
+  flex-direction: column;
+  padding: 5px 10px;
+  margin: 10px;
+}
+
+.inputDiv input {
+  width: 400px;
+  border: 0.5 solid #35a29f;
+  border-radius: 10px;
+  padding: 3px 15px;
+}
