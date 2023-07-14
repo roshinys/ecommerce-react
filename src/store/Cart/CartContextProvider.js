@@ -2,14 +2,16 @@ import React, { useReducer } from "react";
 import cartContext from "./cart-context";
 
 const cartReducer = (state, action) => {
+  console.log(state);
+  console.log(action);
   switch (action.type) {
     case "ADD_ITEM":
       const existingCart = state.cartList.find(
-        (cart) => cart.id === parseInt(action.payload.product.id)
+        (cart) => cart.id === action.payload.product.id
       );
       if (existingCart) {
         const updatedCartList = state.cartList.map((cart) => {
-          if (cart.id === parseInt(action.payload.product.id)) {
+          if (cart.id === action.payload.product.id) {
             const quantity = parseInt(cart.quantity) + 1;
             return { ...cart, quantity };
           }
@@ -61,7 +63,7 @@ function CartContextProvider(props) {
   };
 
   const removeCartItemHandler = (id) => {
-    dispatch({ type: "REMOVE_ITEM", payload: { id: parseInt(id) } });
+    dispatch({ type: "REMOVE_ITEM", payload: { id: id } });
   };
 
   return (

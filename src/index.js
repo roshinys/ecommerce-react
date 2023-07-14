@@ -10,13 +10,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <ProductContextProvider>
-      <CartContextProvider>
-        <App />
-      </CartContextProvider>
-    </ProductContextProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <ProductContextProvider>
+    <CartContextProvider>
+      <App />
+    </CartContextProvider>
+  </ProductContextProvider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

@@ -9,7 +9,7 @@ function Contact() {
       {
         method: "POST",
         body: JSON.stringify(user),
-        header: {
+        headers: {
           "Content-Type": "application/json",
         },
       }

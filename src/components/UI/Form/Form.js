@@ -23,27 +23,9 @@ function Form(props) {
 
   return (
     <form className={styles.form} onSubmit={submitHandler}>
-      <Input
-        label="Name"
-        type="text"
-        name="name"
-        ref={nameRef}
-        onChange={(e) => {}}
-      />
-      <Input
-        label="Email"
-        type="email"
-        name="email"
-        ref={emailRef}
-        onChange={(e) => {}}
-      />
-      <Input
-        label="Phone"
-        type="tel"
-        name="phone"
-        ref={phnoRef}
-        onChange={(e) => {}}
-      />
+      <Input label="Name" type="text" name="name" ref={nameRef} />
+      <Input label="Email" type="email" name="email" ref={emailRef} />
+      <Input label="Phone" type="tel" name="phone" ref={phnoRef} />
       <Button type="submit" className={styles.formButton}>
         Contact
       </Button>
