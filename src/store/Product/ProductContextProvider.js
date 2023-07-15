@@ -15,7 +15,7 @@ function ProductContextProvider(props) {
         loadedProducts.push({
           id: key,
           title: data[key].title,
-          images: data[key].images,
+          images: JSON.parse(data[key].images),
           description: data[key].description,
           price: parseFloat(data[key].price),
         });
@@ -23,7 +23,7 @@ function ProductContextProvider(props) {
       setProducts(loadedProducts);
     };
     getData();
-  }, []);
+  }, [products]);
 
   const addProductHandler = async (product) => {
     const response = await fetch(
