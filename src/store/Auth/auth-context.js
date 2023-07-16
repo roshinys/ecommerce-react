@@ -33,11 +33,14 @@ export const AuthContextProvider = (props) => {
       logout();
     }, 5 * 60 * 1000);
   };
+
   const logout = () => {
     setToken(null);
     localStorage.removeItem("token");
     localStorage.removeItem("expirationTime");
+    localStorage.removeItem("email");
   };
+
   return (
     <AuthContext.Provider
       value={{

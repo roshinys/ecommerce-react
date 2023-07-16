@@ -37,6 +37,7 @@ function Login() {
         const data = await response.json();
         const jwtToken = data.idToken;
         authCtx.login(jwtToken);
+        localStorage.setItem("email", email);
         navigate("/shop");
       } else {
         const data = await response.json();
