@@ -1,0 +1,23 @@
+.form {
+  background-color: #35a29f;
+  width: 500px;
+  position: relative;
+  left: 25%;
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 30px;
+  color: white;
+}
+.formButton {
+  background-color: #331d2c !important;
+  color: white !important;
+  border: none !important;
+  font-weight: 600;
+}
+.formButton:hover {
+  background-color: #064644e4 !important;
+}

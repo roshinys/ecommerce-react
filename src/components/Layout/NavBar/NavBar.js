@@ -46,6 +46,16 @@ function NavBar() {
                 ? `${styles.link} ${styles.active}`
                 : `${styles.link}`;
             }}
+            to="/login"
+          >
+            Login
+          </NavLink>
+          <NavLink
+            className={({ isActive }) => {
+              return isActive
+                ? `${styles.link} ${styles.active}`
+                : `${styles.link}`;
+            }}
             to="/contact"
           >
             Contact-Us
