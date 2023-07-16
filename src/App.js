@@ -1,4 +1,9 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useContext } from "react";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  Navigate,
+} from "react-router-dom";
 import Shop from "./components/Shop/Shop";
 import About from "./components/About/About";
 import RootLayout from "./components/Root/Root";
@@ -7,6 +12,7 @@ import Contact from "./components/Contact/Contact";
 import ProductDetail from "./components/Product/ProductDetail/ProductDetail";
 import AddProduct from "./admin/AddProduct/AddProduct";
 import Login from "./components/Login/Login";
+import AuthContext from "./store/Auth/auth-context";
 
 const router = createBrowserRouter([
   {
@@ -19,7 +25,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/shop",
-        element: <Shop />,
+        element: (
+          <RequireAuth redirectTo="/login">
+            <Shop />
+          </RequireAuth>
+        ),
       },
       {
         path: "/about",
@@ -31,11 +41,19 @@ const router = createBrowserRouter([
       },
       {
         path: "/shop/:productId",
-        element: <ProductDetail />,
+        element: (
+          <RequireAuth redirectTo="/login">
+            <ProductDetail />
+          </RequireAuth>
+        ),
       },
       {
         path: "/addProduct",
-        element: <AddProduct />,
+        element: (
+          <RequireAuth redirectTo="/login">
+            <AddProduct />
+          </RequireAuth>
+        ),
       },
       {
         path: "/login",
@@ -47,6 +65,15 @@ const router = createBrowserRouter([
 
 function App() {
   return <RouterProvider router={router} />;
+}
+
+function RequireAuth(props) {
+  const authCtx = useContext(AuthContext);
+  return authCtx.isLoggedIn ? (
+    <>{props.children}</>
+  ) : (
+    <Navigate to={props.redirectTo} />
+  );
 }
 
 export default App;
