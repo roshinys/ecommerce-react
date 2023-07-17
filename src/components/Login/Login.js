@@ -2,7 +2,7 @@ import React, { useContext, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css";
 import Input from "../../components/UI/Input/Input";
-import { Button } from "react-bootstrap";
+import { Button, Container } from "react-bootstrap";
 import AuthContext from "../../store/Auth/auth-context";
 
 function Login() {
@@ -52,13 +52,15 @@ function Login() {
     }
   };
   return (
-    <form className={styles.form} onSubmit={loginHandler}>
-      <Input label="Email" type="email" name="email" ref={emailRef} />
-      <Input label="Password" type="password" name="password" ref={passRef} />
-      <Button type="submit" className={styles.formButton}>
-        Login
-      </Button>
-    </form>
+    <Container>
+      <form className={styles.form} onSubmit={loginHandler}>
+        <Input label="Email" type="email" name="email" ref={emailRef} />
+        <Input label="Password" type="password" name="password" ref={passRef} />
+        <Button type="submit" className={styles.formButton}>
+          Login
+        </Button>
+      </form>
+    </Container>
   );
 }
 
